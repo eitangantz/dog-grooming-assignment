@@ -38,17 +38,14 @@ Make sure you have the following installed:
    ```bash
    cd dog-grooming-backend
 2. **restore dependencies**:
-
    ```bash
    dotnet restore
 3. **Update appsettings.json**
    ```bash
    {"ConnectionStrings": {"DefaultConnection": "Server=your_server_name;Database=DogGroomingDB;Trusted_Connection=True;" }}
-   
 4.  **Run migrations**:
    ```bash
    dotnet ef database update
-
-5. 4.  **Run migrations**:
+5. **Run migrations**:
    ```bash
    dotnet ef database update

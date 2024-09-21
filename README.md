@@ -48,7 +48,8 @@ Make sure you have the following installed:
 4.  **Run migrations**:
    ```bash
    dotnet ef database update
-5. **Run the backend serves**
+
+5. **Run the backend server**
    ```bash
    dotnet run
 

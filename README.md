@@ -1,135 +1,154 @@
-Markdown
-## Appointment Management System ##
+# Dog Grooming Management System
 
-**Overview**
+## Overview
 
-This project is a web application designed to manage appointments. Users can register, log in, create, edit, and delete their own appointments. The system ensures data privacy by only allowing users to access their information. The backend is built with **.NET 8** and the frontend utilizes **React**.
+The **Dog Grooming Management System** allows users to register, log in, and manage their dog grooming appointments. Users can add, edit, and delete their own appointments, while ensuring data privacy. The system is built using a **.NET 8** backend and a **React** frontend.
 
 ### Tech Stack
 
-* **Backend:** .NET 8 (Web API)
-* **Frontend:** React (with Axios for API requests)
-* **Database:** Microsoft SQL Server
-* **Authentication:** JWT (JSON Web Token)
-* **Styling:** Basic CSS (expand for more advanced styling)
+- **Backend**: .NET 8 (ASP.NET Web API)
+- **Frontend**: React (with Axios for API requests)
+- **Database**: Microsoft SQL Server
+- **Authentication**: JWT (JSON Web Token)
+- **Styling**: Basic CSS (You can expand this based on your styling choices)
 
-### Features
+## Features
 
-* **User Authentication:** Register and log in with JWT-based authentication.
-* **Appointment Management:** Create, edit, and delete appointments.
-* **Appointment Listing:** View a list of all user appointments.
-* **Filtering:** Filter appointments by date or customer name.
-* **Secure Access:** Only users can edit/delete their own appointments.
+- **User Authentication**: Register and log in with JWT authentication.
+- **Manage Appointments**: Users can create, edit, and delete their own appointments.
+- **Appointment Listing**: Displays a list of all user appointments.
+- **Filtering**: Filter appointments by date or customer name.
+- **Secure Access**: Only the owner of the appointments can edit or delete them.
 
 ## Project Structure
 
-חשוב להשתמש בקוד בזהירות.
+/dog-grooming-project /dog-grooming-backend # .NET 8 Web API for backend logic /dog-grooming-frontend # React frontend for UI
 
-appointment-management-system/
-backend/  # .NET 8 Web API for backend logic
-frontend/ # React frontend for UI
-
+markdown
+Copy code
 
 ## Prerequisites
 
-* **Node.js** (v16.x or v18.x LTS recommended)
-* **.NET 8 SDK**
-* **Microsoft SQL Server**
+Make sure you have the following installed:
+
+- **Node.js** (v16.x or v18.x LTS recommended)
+- **.NET 8 SDK**
+- **SQL Server**
 
 ## Getting Started
 
 ### Backend Setup
 
-1. **Navigate to the backend directory:**
+1. **Navigate to the backend directory**:
 
-```bash
-cd appointment-management-system/backend
+   ```bash
+   cd dog-grooming-backend
 Restore dependencies:
-Bash
-dotnet restore
-חשוב להשתמש בקוד בזהירות.
 
+bash
+Copy code
+dotnet restore
 Update appsettings.json:
 
-Update the ConnectionStrings section with your SQL Server connection string.
-Run migrations (to set up the database):
+Update the appsettings.json file with your SQL Server connection string:
 
-Bash
+json
+Copy code
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=your_server_name;Database=DogGroomingDB;Trusted_Connection=True;"
+  }
+}
+Run migrations to set up the database:
+
+bash
+Copy code
 dotnet ef database update
-חשוב להשתמש בקוד בזהירות.
-
 Run the backend server:
-Bash
-dotnet run
-חשוב להשתמש בקוד בזהירות.
 
-The backend should be accessible on http://localhost:5000 (default port).
+bash
+Copy code
+dotnet run
+The backend should be running on http://localhost:5000.
+
 Frontend Setup
 Navigate to the frontend directory:
-Bash
-cd appointment-management-system/frontend
-חשוב להשתמש בקוד בזהירות.
 
+bash
+Copy code
+cd dog-grooming-frontend
 Install dependencies:
-Bash
+
+bash
+Copy code
 npm install
-חשוב להשתמש בקוד בזהירות.
-
 Run the frontend server:
-Bash
-npm start
-חשוב להשתמש בקוד בזהירות.
 
-The frontend should be accessible on http://localhost:3000 (default port).
+bash
+Copy code
+npm start
+The frontend should be running on http://localhost:3000.
+
 API Endpoints
 Authentication
-
 POST /api/authentication/register: Register a new user.
-Request body:
-JSON
-{
-  "Username": "your_username",
-  "Password": "your_password",
-  "FirstName": "Your Name" (optional)
-}
-חשוב להשתמש בקוד בזהירות.
 
-POST /api/authentication/login: Log in and retrieve a JWT token.
 Request body:
-JSON
-{
-  "Username": "your_username",
-  "Password": "your_password"
-}
-חשוב להשתמש בקוד בזהירות.
 
+json
+Copy code
+{
+  "Username": "john_doe",
+  "PasswordHash": "password123",
+  "FirstName": "John"
+}
+POST /api/authentication/login: Log in a user and return a JWT token.
+
+Request body:
+
+json
+Copy code
+{
+  "Username": "john_doe",
+  "PasswordHash": "password123"
+}
 Appointments
+GET /api/appointments: Retrieve all appointments (optionally filterable by customerName and date).
 
-GET /api/appointments (optional query parameters for filtering by customerName and date): Retrieve all appointments for the logged-in user.
 POST /api/appointments: Add a new appointment.
+
 Request body:
-JSON
+
+json
+Copy code
 {
-  "CustomerName": "Customer's Name",
-  "ScheduledTime": "YYYY-MM-DDTHH:MM:SS" (e.g., "2024-09-22T10:00:00")
+  "CustomerName": "Sparky",
+  "ScheduledTime": "2024-09-22T14:00:00"
 }
-חשוב להשתמש בקוד בזהירות.
-
 PUT /api/appointments/{id}: Update an existing appointment.
-Request body (same as POST /api/appointments)
+
+Request body:
+
+json
+Copy code
+{
+  "CustomerName": "Buddy",
+  "ScheduledTime": "2024-09-23T16:00:00"
+}
 DELETE /api/appointments/{id}: Delete an appointment by its ID.
+
 Running Tests
-To run unit tests for the backend, navigate to the backend directory and run:
+To run unit tests for the backend, use:
 
-Bash
+bash
+Copy code
 dotnet test
-חשוב להשתמש בקוד בזהירות.
-
 Deployment
-Backend:
-
+Backend
 You can deploy the .NET backend to any cloud provider that supports .NET Core, such as Azure, AWS, or Heroku.
 
-Frontend:
+Frontend
+You can deploy the React frontend to services like Vercel, Netlify, or any static hosting service.
 
-The React frontend can be deployed to services like Vercel, Netlify, or any static hosting service.
+License
+This project is open-source and available under the MIT License.

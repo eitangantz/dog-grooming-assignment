@@ -43,12 +43,9 @@ Make sure you have the following installed:
    dotnet restore
 3. **Update appsettings.json**
    ```bash
-   {
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=your_server_name;Database=DogGroomingDB;Trusted_Connection=True;"
-  }
-}```bash
-
-
+   {"ConnectionStrings": {"DefaultConnection": "Server=your_server_name;Database=DogGroomingDB;Trusted_Connection=True;" }}
+   
 4.  **Run migrations**:
+   ```bash
+   dotnet ef database update
 

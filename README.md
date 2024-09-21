@@ -49,7 +49,6 @@ Make sure you have the following installed:
    ```bash
    dotnet ef database update
 
-4.  **Run migrations**:
+5. 4.  **Run migrations**:
    ```bash
    dotnet ef database update
-

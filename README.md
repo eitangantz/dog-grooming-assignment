@@ -42,7 +42,7 @@ Make sure you have the following installed:
    cd dog-grooming-backend
 Restore dependencies:
 
-bash
+   ```bash
 dotnet restore
 Update appsettings.json:
 
@@ -57,26 +57,27 @@ Copy code
 }
 Run migrations to set up the database:
 
-bash
+   ```bash
+
 dotnet ef database update
 Run the backend server:
 
-bash
+   ```bash
 dotnet run
 The backend should be running on http://localhost:5000.
 
 Frontend Setup
 Navigate to the frontend directory:
 
-bash
+   ```bash
 cd dog-grooming-frontend
 Install dependencies:
 
-bash
+   ```bash
 npm install
 Run the frontend server:
 
-bash
+   ```bash
 npm start
 The frontend should be running on http://localhost:3000.
 
@@ -87,7 +88,6 @@ POST /api/authentication/register: Register a new user.
 Request body:
 
 json
-Copy code
 {
   "Username": "john_doe",
   "PasswordHash": "password123",
@@ -98,7 +98,6 @@ POST /api/authentication/login: Log in a user and return a JWT token.
 Request body:
 
 json
-Copy code
 {
   "Username": "john_doe",
   "PasswordHash": "password123"
@@ -125,15 +124,3 @@ json
   "ScheduledTime": "2024-09-23T16:00:00"
 }
 DELETE /api/appointments/{id}: Delete an appointment by its ID.
-
-Running Tests
-To run unit tests for the backend, use:
-
-bash
-dotnet test
-Deployment
-Backend
-You can deploy the .NET backend to any cloud provider that supports .NET Core, such as Azure, AWS, or Heroku.
-
-Frontend
-You can deploy the React frontend to services like Vercel, Netlify, or any static hosting service.

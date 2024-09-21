@@ -24,9 +24,6 @@ The **Dog Grooming Management System** allows users to register, log in, and man
 
 /dog-grooming-project /dog-grooming-backend # .NET 8 Web API for backend logic /dog-grooming-frontend # React frontend for UI
 
-markdown
-Copy code
-
 ## Prerequisites
 
 Make sure you have the following installed:
@@ -46,7 +43,6 @@ Make sure you have the following installed:
 Restore dependencies:
 
 bash
-Copy code
 dotnet restore
 Update appsettings.json:
 
@@ -62,12 +58,10 @@ Copy code
 Run migrations to set up the database:
 
 bash
-Copy code
 dotnet ef database update
 Run the backend server:
 
 bash
-Copy code
 dotnet run
 The backend should be running on http://localhost:5000.
 
@@ -75,17 +69,14 @@ Frontend Setup
 Navigate to the frontend directory:
 
 bash
-Copy code
 cd dog-grooming-frontend
 Install dependencies:
 
 bash
-Copy code
 npm install
 Run the frontend server:
 
 bash
-Copy code
 npm start
 The frontend should be running on http://localhost:3000.
 
@@ -120,7 +111,6 @@ POST /api/appointments: Add a new appointment.
 Request body:
 
 json
-Copy code
 {
   "CustomerName": "Sparky",
   "ScheduledTime": "2024-09-22T14:00:00"
@@ -130,7 +120,6 @@ PUT /api/appointments/{id}: Update an existing appointment.
 Request body:
 
 json
-Copy code
 {
   "CustomerName": "Buddy",
   "ScheduledTime": "2024-09-23T16:00:00"
@@ -141,7 +130,6 @@ Running Tests
 To run unit tests for the backend, use:
 
 bash
-Copy code
 dotnet test
 Deployment
 Backend
@@ -149,6 +137,3 @@ You can deploy the .NET backend to any cloud provider that supports .NET Core, s
 
 Frontend
 You can deploy the React frontend to services like Vercel, Netlify, or any static hosting service.
-
-License
-This project is open-source and available under the MIT License.

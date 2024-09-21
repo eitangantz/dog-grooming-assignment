@@ -47,7 +47,7 @@ Make sure you have the following installed:
   "ConnectionStrings": {
     "DefaultConnection": "Server=your_server_name;Database=DogGroomingDB;Trusted_Connection=True;"
   }
-}
+}```bash
 
 
 4.  **Run migrations**:
